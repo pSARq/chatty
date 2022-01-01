@@ -1,4 +1,7 @@
-body{
-    border: 10 px solid red;
-    background-color: blue;
+/* .color{
+    background-color: rgba(149, 98, 4, 0.349);
+} */
+
+.background-login{
+    background-color: rgba(56, 69, 144, 0.24);
 }

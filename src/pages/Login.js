@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { signin, signInWithGoogle, signInWithGitHub } from "../helpers/auth";
+import Google from "../img/google.png";
+import Github from "../img/github.png";
+import "../styles.css"
 
 export default class Login extends Component {
   constructor(props) {
@@ -34,10 +37,10 @@ export default class Login extends Component {
     try {
       await signInWithGoogle();
     } catch (error) {
-      
       this.setState({ error: error.message });
     }
   }
+
   async githubSignIn() {
     try {
       await signInWithGitHub();
@@ -49,40 +52,55 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <form autoComplete="off" onSubmit={this.handleSubmit}>
+        <form
+          autoComplete="off"
+          onSubmit={this.handleSubmit}
+          className="container col-5 text-center background-login"
+        >
           <h1>
             Login to
-            <Link to="/">Chatty</Link>
+            <Link to="/"> Chatty</Link>
           </h1>
           <p>Fill in the form below to login to your account.</p>
-          <div>
+          <div className="mb-3">
             <input
               placeholder="Email"
               name="email"
               type="email"
               onChange={this.handleChange}
               value={this.state.email}
+              class="form-control"
             />
           </div>
-          <div>
+          <div className="mb-3">
             <input
               placeholder="Password"
               name="password"
               onChange={this.handleChange}
               value={this.state.password}
               type="password"
+              class="form-control"
             />
           </div>
-          <div>
+          <div className="mb-3">
             {this.state.error ? <p>{this.state.error}</p> : null}
-            <button type="submit">Login</button>
+            <button type="submit" className="btn btn-outline-primary">
+              Login
+            </button>
           </div>
-          <button className="boton-crear" onClick={this.googleSignIn} type="button">
-            Login with Google
-          </button>
-          <button className="boton-crear" type="button" onClick={this.githubSignIn}>
-            Login with GitHub
-          </button>
+
+          <div className="mb-2">
+            <button onClick={this.googleSignIn} type="button" className="btn btn-outline-success">
+              <img src={Google} width={30} /> Login with Google
+            </button>
+          </div>
+
+          <div>
+            <button type="button" onClick={this.githubSignIn} className="btn btn-outline-secondary">
+              <img src={Github} width={30} /> Login with GitHub
+            </button>
+          </div>
+
           <hr />
           <p>
             Don't have an account? <Link to="/signup">Sign up</Link>
