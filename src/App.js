@@ -63,9 +63,6 @@ class App extends Component {
   render() {
     return this.state.loading === true ? <h2>Loading...</h2>:(
       <Router>
-        <button className="boton-crear" type="button" onClick={() => auth().signOut()} >
-            Logout
-        </button>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <PrivateRoute path="/chat" authenticated={this.state.authenticated} component={Chat}></PrivateRoute>

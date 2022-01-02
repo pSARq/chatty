@@ -54,7 +54,7 @@ export default class SignUp extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="container col-5 text-center background-login">
+        <form onSubmit={this.handleSubmit} className="container col-5 text-center background-login mt-4">
           <h1>
             Sign Up to
             <Link to="/">Chatty</Link>

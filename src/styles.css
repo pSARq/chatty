@@ -5,3 +5,44 @@
 .background-login{
     background-color: rgba(56, 69, 144, 0.24);
 }
+
+.chat{
+    width: 99%;
+    border-radius: 2px;
+    margin: 7px ;
+    position: relative;
+    bottom: 0cm;
+}
+
+.container-post{
+    padding: 15px 0px 15px 0px;
+}
+
+.text-post{
+    border-radius: 10px;
+    width: 94%;
+    padding: 7px;
+}
+
+.btn-post{
+    padding: 8px 12px;
+    margin-left: 3px;
+    border-radius: 5px;
+}
+
+.logout-color{
+    background-color: rgba(120, 120, 207, 0.513);
+}
+
+.container-text-color{
+    padding: 10px;
+    background-color: rgba(106, 174, 230, 0.623);
+}
+
+.text-messages{
+    border-radius: 20px;
+    background-color: white;
+    padding: 4px 10px;
+    border: 0px;
+    color: black;
+}

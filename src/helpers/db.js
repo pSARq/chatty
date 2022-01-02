@@ -1,12 +1,12 @@
 import { db } from "../services/firebase";
 
 export function readChats() {
-  let abc = [];
+  let chat = [];
   db.ref("chats").on("value", snapshot => {
     snapshot.forEach(snap => {
-      abc.push(snap.val())
+      chat.push(snap.val())
     });
-    return abc;
+    return chat;
   });
 }
 
